@@ -292,7 +292,7 @@ body.lock {
 }
 .modal__close {
 	position: absolute;
-	content: url("../../img/icons/close.png");
+	content: url("../img/icons/close.png");
 	top: 0;
 	right: -41px;
 	width: 21px;

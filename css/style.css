@@ -333,10 +333,26 @@ body.lock {
 	font-weight: 300;
 	line-height: 66px;
 }
-#consultation, #order, #thanks {
+#consult, #order, #thanks {
 	display: none;
 }
 
+@media (max-width: 425px) {
+	.modal {
+		width: calc(100% - 20px);
+		padding: 40px 30px;
+	}
+	.modal__form input {
+		width: 100%;
+	}
+	.modal__close {
+		top: -50px;
+		right: -10px;
+		transform: translate(-50%, 0);
+		width: 30px;
+		height: 30px;
+	}
+}
 .intro {
 	text-align: right;
 	height: 650px;
@@ -536,6 +552,9 @@ body.lock {
 	margin: 0px 0px 36px 0px;
 	line-height: 22px;
 }
+.consult__input {
+	display: block;
+}
 .consult__btn {
 	margin-top: 5px;
 	width: 300px;
@@ -575,6 +594,23 @@ body.lock {
 		width: 100%;
 	}
 }
+label.error {
+	display: block;
+	margin: 10px 0;
+	position: relative;
+	top: -5px;
+	color: black;
+	font-size: 16px;
+}
+
+.consult label.error {
+	color: rgba(255, 255, 255, 0.6);
+}
+
+input.error {
+	border: 1px solid #f00;
+}
+
 .carousel {
 	padding: 81px 0;
 }

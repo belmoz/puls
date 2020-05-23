@@ -24,7 +24,7 @@
 	</div>
 	<div class="header__contacts">
 		<a href="tel:+74999228974" class="header__phone">+7 (499) 922-89-74</a>
-		<button data-modal="consultation" class="header__btn btn">заказать звонок</button>
+		<button data-modal="consult" class="header__btn btn">заказать звонок</button>
 	</div>
 </header>			<h1 class="intro__title">Подбор пульсометра</h1>
 			<h2 class="intro__subtitle">с учётом вашего уровня подготовки</h2>
@@ -48,7 +48,7 @@
 					<div class="intro__descr">Ответим на все вопросы</div>
 				</div>
 			</div>
-			<button data-modal="consultation" class="intro__btn btn">заказать консультацию</button>
+			<button data-modal="consult" class="intro__btn btn">заказать консультацию</button>
 			<div class="intro__catalog">
 				<span>или </span><a href="">перейти в каталог</a>
 			</div>
@@ -82,11 +82,11 @@
 		<div class="consult__container container">
 			<h2 class="consult__title">Получите бесплатную консультацию по подбору пульсометра</h2>
 			<div class="consult__descr">Просто заполните форму заявки и мы перезвоним вам в течении 10 минут</div>
-			<form action="" class="consult__form form">
+			<form method="get" action="" id="consult-form" class="consult__form form">
 				<input name="name" type="name" class="consult__input form__name" placeholder="Ваше имя">
-				<input name="tel" type="number" class="consult__input form__tel" placeholder="Ваш телефон">
+				<input name="tel" class="consult__input form__tel" placeholder="Ваш телефон">
 				<input name="email" type="email" class="consult__input form__email" placeholder="Ваш E-mail">
-				<button class="consult__btn btn">заказать консультацию</button>
+				<button type="submit" class="consult__btn btn">заказать консультацию</button>
 			</form>
 		</div>
 	</section>
@@ -339,7 +339,7 @@
 		<div class="modal__subtitle">и мы перезвоним вам в течении 10 минут</div>
 		<form action="" class="modal__form form">
 			<input name="name" type="name" class="modal__input form__name" placeholder="Ваше имя">
-			<input name="tel" type="number" class="modal__input form__tel" placeholder="Ваш телефон">
+			<input name="tel" class="modal__input form__tel" placeholder="Ваш телефон">
 			<input name="email" type="email" class="modal__input form__email" placeholder="Ваш E-mail">
 			<button class="modal__btn btn">заказать консультацию</button>
 		</form>
@@ -366,6 +366,8 @@
 </section>	<script src="//code.jquery.com/jquery-3.5.0.min.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	<script src="js/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
 	<script src="js/sliders.js"></script>
 </body>
 

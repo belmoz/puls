@@ -11,9 +11,9 @@ $('.catalog-item__link').on('click', function(event) {
 $('[data-modal=consult]').on('click', function(event) {
 	$('.overlay, #consultation').fadeIn();
 });
-$('[data-modal=order]').on('click', function(event) {
-	$('.overlay, #order').fadeIn('slow');
-});
+// $('[data-modal=order]').on('click', function(event) {
+// 	$('.overlay, #order').fadeIn('slow');
+// });
 $('.modal__close').on('click', function(event) {
 	$('.overlay, #order, #consultation, #thanks').fadeOut('slow');
 });
@@ -31,45 +31,9 @@ $('[data-modal=order]').each(function(i) {
 	});
 });
 
-// $(document).ready(function() {
-// 	$('form#qwe').validate();
-// })
-
-
-
-// $(document).ready(function() {
-
-//     $("form#signup").validate({
-//         rules: {
-//             password: {
-//                 required: true,
-//                 minlength: 5
-//             },
-//             passwordConfirm: {
-//                 //required: true,
-//                 //minlength: 5,
-//                 equalTo: "#password"
-//             }
-//         },
-//         messages: {
-//             password: {
-//                 required: "Please provide a password",
-//                 minlength: "Your password must be at least 5 characters long"
-//             },
-//             passwordConfirm: {
-//                 required: "Please provide a password",
-//                 minlength: "Your password must be at least 5 characters long",
-//                 equalTo: "Please enter the same password as above"
-//             }
-//         }
-//     });
-
-// });
-
-
 $(document).ready(function() {
 
-	function validateForms(form){
+	function validateForms(form) {
 		$(form).validate({
 			rules: {
 				name: {
@@ -95,7 +59,7 @@ $(document).ready(function() {
 				},
 				email: {
 					required: "Пожалуйста, введите свой адрес",
-					email: "Неправильно введён адрес почты"			
+					email: "Неправильно введён адрес почты"
 				}
 			}
 		});
@@ -106,5 +70,22 @@ $(document).ready(function() {
 	validateForms("form#consult-form");
 
 	$(".form__tel").mask("+375 (99) 999-99-99");
+
+	$('form').submit(function(e) {
+		e.preventDefault();
+		$.ajax({
+			type: "POST",
+			url: "mailer/smart.php",
+			data: $(this).serialize()
+		}).done(function() {
+			$(this).find("input").val("");
+			$('#consultation, #order').fadeOut();
+			$('.overlay, #thanks').fadeIn('slow');
+
+
+			$('form').trigger('reset');
+		});
+		return false;
+	});
 
 });

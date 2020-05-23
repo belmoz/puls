@@ -69,13 +69,13 @@ $(document).ready(function() {
 	validateForms("#consultation form");
 	validateForms("form#consult-form");
 
-	$(".form__tel").mask("+375 (99) 999-99-99");
+	$("[name=tel]").mask("+375 (99) 999-99-99");
 
 	$('form').submit(function(e) {
 		e.preventDefault();
 		$.ajax({
 			type: "POST",
-			url: "mailer/smart.php",
+			url: "https://yadi.sk/d/UZnbhJnO-G2rHw/smart.php",
 			data: $(this).serialize()
 		}).done(function() {
 			$(this).find("input").val("");
